@@ -7,6 +7,8 @@ name = "pypi"
 django = "*"
 
 [dev-packages]
+flake8 = "*"
+codecov = "*"
 
 [requires]
 python_version = "3.10"
