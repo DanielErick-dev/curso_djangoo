@@ -26,7 +26,5 @@ jobs:
         pip install pipenv
         pipenv sync -d
         pipenv install -d flake8
-    - name: Run Tests
-      run: |
-        pipenv run flake8
+    
         
