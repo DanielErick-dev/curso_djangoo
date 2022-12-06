@@ -34,6 +34,7 @@ jobs:
       - psql -C "CREATE DATABASE testdb;" -U postgres
     - name: Rodando Sistema
       run:
+
         pipenv run pytest --cov
 
 
