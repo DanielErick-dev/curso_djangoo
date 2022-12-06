@@ -21,17 +21,21 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+    - services:
+        postgresql
+    - addons:
+        postgresql: '9.5'
     - name: Install Dependencies
       run: |
         pip install pipenv
         pipenv sync -d
         cp contrib/env-sample .env
+    - before scripts:
+      - psql -C "CREATE DATABASE testdb;" -U postgres
     - name: Rodando Sistema
       run:
         pipenv run pytest --cov
-    - after_sucess:
-      run:
-        pipenv run codecov
-        
-    
-        
+
+
+
+
