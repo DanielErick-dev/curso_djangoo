@@ -26,6 +26,5 @@ jobs:
         pipenv sync -d
         cd base
         pipenv run pytest --cov .
-    - after_sucess:
-        pipenv run codecov
+    
         
